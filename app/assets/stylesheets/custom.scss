@@ -121,3 +121,15 @@ input[type="password"] {
   background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
 }
   
+/* user_image  */
+.user_image {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    border: 3px solid #FF8C00;
+}
+
+.top_user_name {
+    font-size:20px;
+    position:relative;right:18px;
+}
