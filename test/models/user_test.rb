@@ -82,4 +82,6 @@ assert @user.valid?, "#{valid_address.inspect} should be valid"
     @user.password = @user.password_confirmation = "a" * 5
     assert_not @user.valid?
   end
+
+ 
 end
