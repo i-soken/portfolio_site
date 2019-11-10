@@ -9,5 +9,10 @@
 			    <%= f.text_field :email, class: 'form-control' %>
                 <%= f.label :パスワード %>  
 			    <%= f.password_field :password, class: 'form-control' %>
-                <%= f.submit "Create my account", class: "btn btn-lg btn-primary btn-block" %>
+                <%= f.label :remember_me,class:"chekbox inline" do%>
+                <%= f.check_box :remember_me %>
+                <span>ログイン情報を記憶する</span>
+                <%end%>
+            <%= f.submit "ログイン！", class: "btn btn-lg btn-primary btn-block" %>
+
             <% end %>	
