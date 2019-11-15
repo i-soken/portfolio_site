@@ -1,5 +1,7 @@
 
- <%= image_tag 'example_user.png', class:'user_image', size: '100x100'%>
+<%provide(:title, @user.name) %>
+
+ <%= gravatar_for @user%>
   <div class="top_user_name">
   <ul><%= @user.name%></ul>
   </div>
