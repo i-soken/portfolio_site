@@ -1,0 +1,6 @@
+<%provide(:title, "投稿画面") %>
+
+<%= form_for @post do |f| %>
+ <%= f.text_field :content %>
+ <%= f.submit "投稿する", class: "btn btn-primary" %>
+<% end %>
