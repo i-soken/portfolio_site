@@ -3,7 +3,18 @@
 
  <%= gravatar_for @user%>
   <div class="top_user_name">
-  <ul><%= @user.name%></ul>
+  <ul>
+  <%=  @user.name %>
+  <% if current_user?(@user) %>
+  <a href = "/posts" class = "camera-solid icon"></a>
+  <% else %>
+  <% end %>
+  </ul>
+  
   </div>
- 
- <%= @post.content %>
+  
+  <% if @user.posts.any? %>
+   <h3>投稿(<%= @user.posts.count %>)</h3>
+   <%= render @posts %>
+   <%= will_paginate @posts %>
+  <% end %>

@@ -16,6 +16,7 @@ before_action :correct_user, only:[:edit,:update]
   #ユーザー表示画面
   def show
     @user = User.find(params[:id])
+    @posts = @user.posts.paginate(page: params[:page])
   end
 
   #新規登録
@@ -29,6 +30,8 @@ before_action :correct_user, only:[:edit,:update]
       render 'new'
     end
   end
+
+  
 
   #ユーザーの情報をとる
   def edit
@@ -52,14 +55,7 @@ before_action :correct_user, only:[:edit,:update]
   end
 end
 
-#登録されているユーザーか確認
-  def logged_in_user
-    unless logged_in?
-      store_location
-      flash[:danger] = "ログインしてください"
-      redirect_to login_url
-    end
-  end
+
 
   #正しいユーザーかどうか確認
   def correct_user

@@ -1,2 +1,6 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<%provide(:title, "投稿詳細") %>
+
+<%= gravatar_for @user%>
+  <div class="top_user_name">
+  <ul><%= @user.name%></ul>
+  </div>
