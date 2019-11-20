@@ -185,5 +185,13 @@ input[type="password"] {
     background-color: currentColor;
   }
   
-  
+  .post_image {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 12px ;
+      margin-bottom: 12px ;
+  }
 
+  .post_page {
+    text-indent:24em;
+  }
