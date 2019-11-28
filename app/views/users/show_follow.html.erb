@@ -1,0 +1,11 @@
+
+
+
+<% if @users.any?%>
+<h1><%= @title %></h1>
+  <%= render @users %>
+<% else %>
+  <h1><%= @title + "はいません" %></h1>
+   <%= will_paginate %>
+<% end %>
+

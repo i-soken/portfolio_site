@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-before_action :logged_in_user,only:[:index,:edit,:update]
+before_action :logged_in_user,only:[:index,:edit,:update,:following,:followers]
 before_action :correct_user, only:[:edit,:update]
 
   protect_from_forgery
@@ -31,11 +31,23 @@ before_action :correct_user, only:[:edit,:update]
     end
   end
 
-  
-
   #ユーザーの情報をとる
   def edit
     @user = User.find(params[:id]) 
+  end
+
+  def following
+    @title = "フォロー"
+    @user = User.find(params[:id])
+    @users  = @user.following.paginate(page: params[:page])
+    render 'show_follow'
+  end
+
+  def followers
+    @title = "フォロワー"
+    @user = User.find(params[:id])
+    @users  = @user.followers.paginate(page: params[:page])
+    render 'show_follow'
   end
 
   private

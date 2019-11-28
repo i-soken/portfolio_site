@@ -2,19 +2,38 @@
 <%provide(:title, @user.name) %>
 
  <%= gravatar_for @user%>
-  <div class="top_user_name">
+   <div class="top_user_name">
   <ul>
-  <%=  @user.name %>
-  <% if current_user?(@user) %>
-  <a href = "/posts" class = "camera-solid icon"></a>
-  <% else %>
+    <%=  @user.name %>
+    <% if current_user?(@user) %>
+      <a href = "/posts" class = "camera-solid icon"></a>
+    <% else %>
   <% end %>
+  <%= render 'shared/stats'  %>
   </ul>
-  
   </div>
-  
+
+ <div class = "follow_btn">
+  <% unless current_user?(@user) %>
+  <%= render 'follow_form' %>
+  <% else %>
+  <%end%>
+  </div>
+
+  <div class = "post_all">
+  　<% if @user.posts.any? %>
+  　<h1>投稿一覧</h1>
+　</div>
+   <%else%>
+    <div class = "post_nil"> 
+  　<h1>まだ投稿はありません</h1>
+  </div>
+ <%end%>
+
+
   <% if @user.posts.any? %>
    <h3>投稿(<%= @user.posts.count %>)</h3>
    <%= render @posts %>
    <%= will_paginate @posts %>
   <% end %>
+ 

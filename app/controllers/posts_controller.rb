@@ -21,7 +21,8 @@ class PostsController < ApplicationController
       flash[:success] = "投稿しました"
       redirect_to user_path(current_user)
     else 
-      render 'index'
+      @feed_items = []
+      render 'static_pages/home'
     end
   end
 

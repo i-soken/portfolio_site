@@ -1,4 +1,11 @@
-<%provide(:title, "Home") %>
-<h1>Sokenのポートフォリオサイト</h1>
-<%= link_to "新規登録はこちら",signup_path, class: "btn btn-success" %>
+
+<%provide(:title, "home") %>
+
+<% if logged_in? %>
+  <h3>Micropost Feed</h3>
+  <%= render 'shared/feed' %>
+<% end %>
+
+  
+ 
 
