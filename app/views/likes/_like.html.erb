@@ -8,7 +8,7 @@
      <% end %>
   <% else %>
    <%= form_for(post.likes.build, remote: true) do |f| %>
-     <div><%= hidden_field_tag :post_id, post.id %></div>
+         <%= hidden_field_tag :post_id, post.id %>
          <%= button_tag(class: "btn btn-default btn-xs") do %>
           <%= content_tag :span, "#", class: "glyphicon glyphicon-heart-empty" %>
         <% end %>
