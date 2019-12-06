@@ -31,6 +31,17 @@ before_action :correct_user, only:[:edit,:update]
     end
   end
 
+   #プロフィール編集
+   def update
+    @user = User.find(params[:id])
+     if @user.update_attributes(user_params)
+      flash[:success] = "プロフィールを編集しました！"
+      redirect_to @user
+     else
+      render 'edit'
+  end
+end
+  
   #ユーザーの情報をとる
   def edit
     @user = User.find(params[:id]) 
@@ -56,17 +67,7 @@ before_action :correct_user, only:[:edit,:update]
     params.require(:user).permit(:name, :email, :password,:password_confirmation)
   end
 
-  #プロフィール編集
-  def update
-    @user = User.find(params[:id])
-     if @user.update_attributes(user_params)
-      flash[:success] = "プロフィールを編集しました！"
-      redirect_to @user
-     else
-      render 'edit'
-  end
-end
-
+ 
 
 
   #正しいユーザーかどうか確認

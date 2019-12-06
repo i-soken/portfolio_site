@@ -1,4 +1,6 @@
+<div id = "feed">
 <%  if @feed_items.any? %>
   <%= render @feed_items%>
   <%=  will_paginate @feed_items %>
 <% end %>
+</div>

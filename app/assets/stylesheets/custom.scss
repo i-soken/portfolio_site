@@ -198,10 +198,27 @@ input[type="password"] {
     text-indent:24em;
   }
 
+  /* 投稿数　*/
+ h3.post_count{
+   margin-bottom: 20px;
+   text-indent:8em;
+   
+ }
+
+ /* ホーム */
+ #feed img {
+  margin: 0 auto;
+ }
+
+ div.post_page {
+  text-align: left;
+  text-indent: 14em;
+ }
+
   /* 投稿がある場合 */
 
   .post_all {
-   margin-left: 57%;
+   margin-left: 43%;
    padding-bottom: 50px;
   }
 
@@ -223,5 +240,24 @@ input[type="password"] {
     margin-bottom: 50px;
   }
 
+  h3.home_text{
+    text-align: center;
+    padding-bottom: 50px;
+  }
+
+  /* フィード */
+  .feed {
+    margin-right: 180px;
+    margin-left: auto;
+  }
+
+  .img {
+    margin-right: 180px;
+  }
+
+  /* いいね　*/
+  .like_unlike {
+    margin-left: auto;
+  }
   
   

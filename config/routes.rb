@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
  
 
+
   root 'static_pages#home'
   get '/top' , to: 'static_pages#top'
   get '/home' ,to:'static_pages#home'
@@ -24,6 +25,7 @@ Rails.application.routes.draw do
   resources :users
   resources :posts,only: [:index,:show,:create,:destroy]
   resources :relationships,only: [:create,:destroy]
+  resources :likes,only: [:create,:destroy]
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

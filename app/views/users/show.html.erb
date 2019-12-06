@@ -20,6 +20,7 @@
   <%end%>
   </div>
 
+  
   <div class = "post_all">
   　<% if @user.posts.any? %>
   　<h1>投稿一覧</h1>
@@ -29,11 +30,18 @@
   　<h1>まだ投稿はありません</h1>
   </div>
  <%end%>
+ 
 
-
+ <div id = "feed">
   <% if @user.posts.any? %>
-   <h3>投稿(<%= @user.posts.count %>)</h3>
+   <h3 class = "post_count">投稿(<%= @user.posts.count %>)</h3>
    <%= render @posts %>
    <%= will_paginate @posts %>
   <% end %>
+  </div>
+
+  
+
+
+  
  
