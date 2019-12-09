@@ -24,7 +24,8 @@ gem 'jquery-rails',            '4.3.1'
 #gem 'jquery-turbolinks'
 gem 'jbuilder',                '2.7.0'
 gem 'rails-i18n'
-gem 'ffi',                     '1.11.1'    
+gem 'ffi',                     '1.11.1' 
+gem 'counter_culture',   '~> 1.8'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
